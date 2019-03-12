@@ -53,7 +53,7 @@ public class CAM_FOV : MonoBehaviour {
 		// disMult *= disMult;
 		float mNewFOV = mStartFOV/disMult;
 		mCam.fieldOfView = mNewFOV;
-		Debug.Log("FOV: " + mNewFOV);
+		// Debug.Log("FOV: " + mNewFOV);
 	}
 
 	// for now, just start moving.
