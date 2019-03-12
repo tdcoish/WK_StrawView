@@ -27,6 +27,8 @@ public class CAM_FOV : MonoBehaviour {
 	[SerializeField]
 	private DEBUG_DistanceTag		SpecialCube;
 
+	private GE_Listener			mClickListener;
+
 	// Use this for initialization
 	void Start () {
 		mCam = GetComponent<Camera>();	
@@ -38,19 +40,24 @@ public class CAM_FOV : MonoBehaviour {
 		Debug.Log("Distance to cube: " + mStartDis);
 		
 		// give us a velocity going forward.
-		mRigid.velocity = transform.forward*mVel;
+		// mRigid.velocity = transform.forward*mVel;
 		mCam.fieldOfView = mStartFOV;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		mVel*=1.01f;
-		mRigid.velocity = transform.forward*mVel;
+		// mRigid.velocity = transform.forward*mVel;
 		// find the distance multiplier.
 		float disMult = Vector3.Distance(SpecialCube.transform.position, transform.position) / mStartDis;
 		// disMult *= disMult;
 		float mNewFOV = mStartFOV/disMult;
 		mCam.fieldOfView = mNewFOV;
 		Debug.Log("FOV: " + mNewFOV);
+	}
+
+	// for now, just start moving.
+	public void OnCubeClicked(){
+		mRigid.velocity = transform.forward*mVel;
 	}
 }
