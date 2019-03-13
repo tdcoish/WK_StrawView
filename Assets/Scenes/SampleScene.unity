@@ -1648,6 +1648,7 @@ GameObject:
   - component: {fileID: 534669906}
   - component: {fileID: 534669908}
   - component: {fileID: 534669909}
+  - component: {fileID: 534669910}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -1722,7 +1723,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d47b74c422a95042a51f67d925e94e0, type: 3}
   m_Name: 
@@ -1782,6 +1783,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mClickedEvent: {fileID: 11400000, guid: b01bebb92d86e564b963186c12453c72, type: 2}
+--- !u!114 &534669910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3157af7dac343e14fb0660e070b7eb53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LookSpeed: 2
+  _TumbleSpeed: 1
+  _HorizontalMovementSpeed: 10
+  _VerticalMovementSpeed: 4
+  _FreezeRoll: 1
+  _FlySpeed: 4
 --- !u!1 &558929711
 GameObject:
   m_ObjectHideFlags: 0

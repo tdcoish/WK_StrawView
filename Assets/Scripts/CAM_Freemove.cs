@@ -30,6 +30,7 @@ public class CAM_Freemove : MonoBehaviour {
     
 	private void Start(){
 		mCam = GetComponent<Camera>();
+		Cursor.visible = false; 	
 	}
 
     // attach a camera to whatever object you put this in.
@@ -58,6 +59,22 @@ public class CAM_Freemove : MonoBehaviour {
 		}
 		if(Input.GetKey(KeyCode.S)){
 			vel = transform.forward * -_FlySpeed;
+		}
+
+		// now we handle going to the side.
+		if(Input.GetKey(KeyCode.A)){
+			vel += transform.right * -_FlySpeed;
+		}
+		if(Input.GetKey(KeyCode.D)){
+			vel += transform.right * _FlySpeed;
+		}
+
+		// now add going up or down
+		if(Input.GetKey(KeyCode.E)){
+			vel += transform.up * _VerticalMovementSpeed;
+		}
+		if(Input.GetKey(KeyCode.Q)){
+			vel += transform.up * -_VerticalMovementSpeed;
 		}
 
 		transform.position += vel * Time.deltaTime;
